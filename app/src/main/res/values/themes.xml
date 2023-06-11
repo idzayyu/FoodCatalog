@@ -1,0 +1,54 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.FoodCatalog" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/blue_900</item>
+        <item name="colorPrimaryVariant">@color/white</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/white</item>
+        <item name="colorSecondaryVariant">@color/white</item>
+        <item name="colorOnSecondary">@color/white</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">@color/white</item>
+        <!-- Customize your theme here. -->
+
+        <item name="android:textViewStyle">@style/Widget.App.TextView</item>
+        <item name="android:windowTitleStyle">@style/TitleDialogTextStyle</item>
+        <item name="actionBarTheme">@style/ToolbarStyle</item>
+        <item name="android:windowLightStatusBar">true</item>
+
+
+    </style>
+
+    <style name="ToolbarStyle" parent="Widget.AppCompat.ActionBar">
+        <item name="android:textColorPrimary">@color/black</item>
+        <item name="titleTextAppearance">@string/title_home</item>
+        <item name="subtitleTextAppearance">@string/title_home</item>
+    </style>
+
+
+    <style name="ThemeOverlay.FoodCatalog.FullscreenContainer" parent="">
+        <item name="fullscreenBackgroundColor">@color/light_blue_600</item>
+        <item name="fullscreenTextColor">@color/light_blue_A200</item>
+    </style>
+
+
+    <style name="Widget.Theme.AppCompat" parent="Theme.AppCompat" >
+    <item name="materialThemeOverlay">@style/ThemeOverlay.App.TextView</item>
+
+    </style>
+    <style name="Widget.App.TextView" parent="Widget.MaterialComponents.TextView" >
+    <item name="materialThemeOverlay">@style/ThemeOverlay.App.TextView</item>
+    </style>
+    <style name="ThemeOverlay.App.TextView" parent="">
+    <item name="android:textColor">@color/black</item>
+    <item name="colorOnContainer">@color/black</item>
+    <item name="colorSecondary">@color/black</item>
+    <item name="colorPrimary">@color/white</item>
+
+    </style>
+    <style name="TitleDialogTextStyle">
+        <item name="android:textColor">@color/black</item>
+    </style>
+</resources>
