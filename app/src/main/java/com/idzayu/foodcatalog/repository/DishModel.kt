@@ -14,5 +14,6 @@ data class Dish(
     val weight: String,
     val description: String,
     @SerializedName("image_url") val imageUrl: String,
-    @SerializedName("tegs") val tags: List<String>
+    @SerializedName("tegs") val tags: List<String>,
+    var cntBasket: Int = 1
 )

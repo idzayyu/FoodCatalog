@@ -1,14 +1,19 @@
 package com.idzayu.foodcatalog.adapters
 
 import android.annotation.SuppressLint
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.idzayu.foodcatalog.R
 import com.idzayu.foodcatalog.databinding.CategoryItemBinding
+import com.idzayu.foodcatalog.repository.Category
 import com.idzayu.foodcatalog.repository.Dish
+import com.idzayu.foodcatalog.repository.Repo
 
 class DishAdapter(private val partList: ArrayList<Dish>, private val listener: NewsClickListener
 ) : RecyclerView.Adapter<DishAdapter.DishHolder>() {
@@ -17,12 +22,11 @@ class DishAdapter(private val partList: ArrayList<Dish>, private val listener: N
     inner class DishHolder(item: View) : RecyclerView.ViewHolder(item) {
         private val binding = CategoryItemBinding.bind(item)
 
-        @SuppressLint("SetTextI18n", "NotifyDataSetChanged")
         fun bind(
             dish: Dish,
             listener: NewsClickListener
         ) = with(binding) {
-            day.text = dish.name
+            name.text = dish.name
             artCategory.setOnClickListener {
                 listener.onCategoryDetailClicked(dish)
             }
@@ -49,8 +53,18 @@ class DishAdapter(private val partList: ArrayList<Dish>, private val listener: N
 
     override fun onBindViewHolder(holder: DishHolder, position: Int) {
          holder.bind(partList[position], listener)
-
     }
+
+    @SuppressLint("NotifyDataSetChanged")
+    fun updateAdapter(items: ArrayList<Dish>){
+        // обновляем список
+        partList.clear()
+        Log.d("myLog",partList.size.toString())
+        partList.addAll(items)
+        notifyDataSetChanged()
+    }
+
+
 
     override fun getItemCount(): Int {
         return partList.size

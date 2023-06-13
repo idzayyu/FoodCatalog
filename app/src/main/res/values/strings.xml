@@ -6,7 +6,10 @@
     <string name="title_search">Search</string>
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
-    <string name="searchStr">Поиск еще не сделан:(</string>
-    <string name="name">Name</string>
-    <string name="todo">TODO</string>
+    <string name="searchStr" translatable="false">Поиск еще не сделан:(</string>
+    <string name="name" translatable="false">Name</string>
+    <string name="todo" translatable="false">TODO</string>
+    <string name="AddBasket">Add to basket</string>
+    <string name="_560">560г</string>
+    <string name="_1">1</string>
 </resources>

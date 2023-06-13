@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/layout_bg"
+    tools:context=".ui.detailDish.DetailDishFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cnsL"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/layout_bg"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/app_name"
+            app:layout_constraintStart_toStartOf="@+id/ArtDish"
+            app:layout_constraintTop_toBottomOf="@+id/name" />
+
+        <TextView
+            android:id="@+id/weight_dish"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:alpha="0.4"
+            android:text="@string/app_name"
+            app:layout_constraintBottom_toBottomOf="@+id/price"
+            app:layout_constraintStart_toEndOf="@+id/price"
+            app:layout_constraintTop_toTopOf="@+id/price" />
+
+        <ImageView
+            android:id="@+id/ArtDish"
+            android:layout_width="311dp"
+            android:layout_height="232dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/shape_catalog"
+            app:layout_constraintEnd_toEndOf="@+id/cnsL"
+            app:layout_constraintStart_toStartOf="@+id/cnsL"
+            app:layout_constraintTop_toTopOf="@+id/cnsL"
+            tools:src="@tools:sample/backgrounds/scenic" />
+
+        <ImageView
+            android:id="@+id/close"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="24dp"
+            android:background="@drawable/layaut_mini_icon_round"
+            android:backgroundTint="@color/white"
+            android:src="@drawable/close"
+            app:layout_constraintEnd_toEndOf="@+id/cnsL"
+            app:layout_constraintTop_toTopOf="@+id/cnsL" />
+
+        <Button
+            android:id="@+id/buttonAddBasket"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:text="@string/AddBasket"
+            app:layout_constraintBottom_toBottomOf="@+id/cnsL"
+            app:layout_constraintEnd_toEndOf="@+id/cnsL"
+            app:layout_constraintStart_toStartOf="@+id/cnsL"
+            app:layout_constraintTop_toBottomOf="@+id/description" />
+
+        <TextView
+            android:id="@+id/description"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:alpha="0.65"
+            android:text="@string/app_name"
+            app:layout_constraintEnd_toEndOf="@+id/ArtDish"
+            app:layout_constraintStart_toStartOf="@+id/ArtDish"
+            app:layout_constraintTop_toBottomOf="@+id/price" />
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/app_name"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="@+id/ArtDish"
+            app:layout_constraintTop_toBottomOf="@+id/ArtDish" />
+
+        <ImageView
+            android:id="@+id/like"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/layaut_mini_icon_round"
+            android:backgroundTint="@color/white"
+            android:foregroundGravity="center_vertical|center"
+            android:src="@drawable/like"
+            app:layout_constraintEnd_toStartOf="@+id/close"
+            app:layout_constraintTop_toTopOf="@+id/cnsL" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

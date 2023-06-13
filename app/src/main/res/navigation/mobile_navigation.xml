@@ -9,7 +9,23 @@
         android:id="@+id/navigation_home"
         android:name="com.idzayu.foodcatalog.ui.home.HomeFragment"
         android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_navigation_home_to_navigation_account"
+            app:destination="@id/navigation_account" />
+        <action
+            android:id="@+id/action_navigation_home_to_navigation_basket"
+            app:destination="@id/navigation_basket" />
+        <action
+            android:id="@+id/action_navigation_home_to_navigation_search"
+            app:destination="@id/navigation_search" />
+        <action
+            android:id="@+id/action_navigation_home_to_dishMenuFragment"
+            app:destination="@id/dishMenuFragment"
+            app:launchSingleTop="false"
+            app:popUpTo="@id/navigation_home"
+            app:popUpToInclusive="true" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_basket"
@@ -27,4 +43,16 @@
         android:name="com.idzayu.foodcatalog.ui.search.SearchFragment"
         android:label="@string/title_search"
         tools:layout="@layout/fragment_search" />
+    <fragment
+        android:id="@+id/dishMenuFragment"
+        android:name="com.idzayu.foodcatalog.ui.dishMenu.DishMenuFragment"
+        android:label="fragment_dish_menu"
+        tools:layout="@layout/fragment_dish_menu" >
+        <action
+            android:id="@+id/action_dishMenuFragment_pop_including_navigation_home"
+            app:destination="@id/navigation_home"
+            app:popUpTo="@id/navigation_home"
+            app:popUpToInclusive="true" />
+    </fragment>
+
 </navigation>

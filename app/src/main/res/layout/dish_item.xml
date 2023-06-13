@@ -17,25 +17,37 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
-            android:id="@+id/artCategory"
+            android:id="@+id/shape"
             android:layout_width="109dp"
-            android:layout_height="110dp"
-            android:contentDescription="@string/todo"
+            android:layout_height="109dp"
+            android:layout_marginStart="8dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/shape_catalog" />
+
+        <ImageView
+            android:id="@+id/artCategory"
+            android:layout_width="95dp"
+            android:layout_height="98dp"
+            android:contentDescription="@string/todo"
+            app:layout_constraintBottom_toBottomOf="@+id/shape"
+            app:layout_constraintEnd_toEndOf="@+id/shape"
+            app:layout_constraintStart_toStartOf="@+id/shape"
+            app:layout_constraintTop_toTopOf="@+id/shape" />
 
         <TextView
-            android:id="@+id/day"
+            android:id="@+id/name"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="35dp"
+            android:layout_marginStart="8dp"
             android:layout_marginTop="5dp"
             android:text="@string/name"
-            android:textSize="20sp"
+            android:textSize="14sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/artCategory" />
+            app:layout_constraintTop_toBottomOf="@+id/shape" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

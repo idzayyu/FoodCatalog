@@ -1,16 +1,20 @@
 package com.idzayu.foodcatalog.ui.home
 
-import android.util.Log
-import androidx.lifecycle.*
-import com.idzayu.foodcatalog.repository.ApiCategory
-import com.idzayu.foodcatalog.repository.Category
-import com.idzayu.foodcatalog.repository.CategoryModel
-import com.idzayu.foodcatalog.repository.Repo
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
 
 class HomeViewModel : ViewModel() {
 
     //var collection: LiveData<ArrayList<Category>>
 
+    private val _text = MutableLiveData<String>().apply {
+        value = "Село"
+    }
+    fun setLocality(locality: String){
+        _text.value = locality
+    }
+    val text: LiveData<String> = _text
 
 
 

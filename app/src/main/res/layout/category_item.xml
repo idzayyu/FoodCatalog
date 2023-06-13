@@ -27,7 +27,7 @@
             android:contentDescription="@string/todo" />
 
         <TextView
-            android:id="@+id/day"
+            android:id="@+id/name"
             android:layout_width="191dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"

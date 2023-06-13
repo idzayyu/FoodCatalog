@@ -24,7 +24,7 @@ class CategoryAdapter(private val partList: ArrayList<Category>, private val lis
             category: Category,
             listener: NewsClickListener
         ) = with(binding) {
-            day.text = category.name
+            name.text = category.name
             artCategory.setOnClickListener {
                 listener.onCategoryDetailClicked(category)
             }

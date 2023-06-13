@@ -7,14 +7,28 @@
     tools:context=".ui.home.HomeFragment">
 
 
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/homeMaterialToolbar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:logo="@drawable/icons"
+        app:menu="@menu/main_toolbar"
+        app:subtitle="12 августа, 2023"
+        app:title="Санкт-Петербург" />
+
+
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rw"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:id="@+id/rw"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/homeMaterialToolbar" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
