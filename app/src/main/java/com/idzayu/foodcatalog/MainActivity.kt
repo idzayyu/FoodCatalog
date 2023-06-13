@@ -5,7 +5,6 @@ import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
-import android.location.Address
 import android.location.Geocoder
 import android.location.Location
 import android.location.LocationManager
@@ -15,9 +14,7 @@ import android.os.Looper
 import android.provider.Settings
 import android.util.Log
 import android.widget.Toast
-import android.widget.Toolbar
 import androidx.annotation.RequiresApi
-import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.navigation.findNavController
@@ -25,6 +22,7 @@ import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.gms.location.*
 import com.google.android.material.appbar.MaterialToolbar
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.idzayu.foodcatalog.databinding.ActivityMainBinding
 import com.idzayu.foodcatalog.repository.*
 import java.util.*
@@ -176,8 +174,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun populateList() {
-
-        ApiDish().getCategory(object : ApiDish.MyCallback {
+        ApiCategory().getLst(object : ApiCategory.MyCallbackDish {
             override fun onSuccess(result: DishModel) {
                 Repo.dishes.addAll(result.dishes)
             }
@@ -186,7 +183,7 @@ class MainActivity : AppCompatActivity() {
                 Log.d("ForecastList", error.message, error)
             }
 
-        })
+        }, "c7a508f2-a904-498a-8539-09d96785446e")
     }
 
 

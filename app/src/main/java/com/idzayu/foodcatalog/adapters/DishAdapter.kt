@@ -1,19 +1,14 @@
 package com.idzayu.foodcatalog.adapters
 
 import android.annotation.SuppressLint
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
-import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.idzayu.foodcatalog.R
 import com.idzayu.foodcatalog.databinding.CategoryItemBinding
-import com.idzayu.foodcatalog.repository.Category
 import com.idzayu.foodcatalog.repository.Dish
-import com.idzayu.foodcatalog.repository.Repo
 
 class DishAdapter(private val partList: ArrayList<Dish>, private val listener: NewsClickListener
 ) : RecyclerView.Adapter<DishAdapter.DishHolder>() {
@@ -59,7 +54,6 @@ class DishAdapter(private val partList: ArrayList<Dish>, private val listener: N
     fun updateAdapter(items: ArrayList<Dish>){
         // обновляем список
         partList.clear()
-        Log.d("myLog",partList.size.toString())
         partList.addAll(items)
         notifyDataSetChanged()
     }

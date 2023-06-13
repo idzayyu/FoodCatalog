@@ -7,12 +7,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.annotation.RequiresApi
-import androidx.core.view.get
+import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.commit
 import androidx.lifecycle.*
 import androidx.navigation.findNavController
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.gms.location.*
@@ -21,9 +19,9 @@ import com.idzayu.foodcatalog.adapters.CategoryAdapter
 import com.idzayu.foodcatalog.databinding.FragmentHomeBinding
 import com.idzayu.foodcatalog.repository.*
 import com.idzayu.foodcatalog.repository.Repo.categories
-import com.idzayu.foodcatalog.ui.dishMenu.DishMenuFragment
 import java.text.SimpleDateFormat
 import java.util.*
+import kotlin.collections.set
 
 class HomeFragment : Fragment(), LifecycleOwner {
 
@@ -49,9 +47,7 @@ class HomeFragment : Fragment(), LifecycleOwner {
 
         rwAdapter = CategoryAdapter(categories, object : CategoryAdapter.NewsClickListener {
             override fun onCategoryDetailClicked(category: Category) {
-                Repo.params[3] = category.name
-                binding.root.findNavController().navigate(R.id.action_navigation_home_to_dishMenuFragment)
-
+                binding.root.findNavController().navigate(R.id.action_navigation_home_to_dishMenuFragment, bundleOf("title" to  category.name))
             }
         })
         rw.layoutManager = LinearLayoutManager(requireContext())
@@ -71,7 +67,7 @@ class HomeFragment : Fragment(), LifecycleOwner {
 
 
     private fun populateList() {
-        ApiCategory().getCategory(object : ApiCategory.MyCallback {
+        ApiCategory().getLst(object : ApiCategory.MyCallback {
             override fun onSuccess(result: CategoryModel) {
                 categories.addAll(result.categories)
                 rwAdapter.updateAdapter(result.categories)
@@ -80,7 +76,7 @@ class HomeFragment : Fragment(), LifecycleOwner {
             override fun onFailure(error: Throwable) {
                 Log.d("ForecastList", error.message, error)
             }
-        })
+        }, "058729bd-1402-4578-88de-265481fd7d54")
 
     }
 

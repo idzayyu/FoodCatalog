@@ -4,11 +4,7 @@ import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
-import android.view.View.OnFocusChangeListener
 import android.view.ViewGroup
-import android.widget.Toast
-import android.widget.Toolbar
-import androidx.core.view.get
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.ViewModelProvider
@@ -16,14 +12,18 @@ import androidx.navigation.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.chip.Chip
-import com.google.android.material.chip.ChipGroup
 import com.idzayu.foodcatalog.R
 import com.idzayu.foodcatalog.adapters.DishAdapter
 import com.idzayu.foodcatalog.databinding.FragmentDishMenuBinding
-import com.idzayu.foodcatalog.repository.Category
 import com.idzayu.foodcatalog.repository.Dish
 import com.idzayu.foodcatalog.repository.Repo
 import com.idzayu.foodcatalog.ui.detailDish.DetailDishFragment
+import kotlin.collections.ArrayList
+import kotlin.collections.component1
+import kotlin.collections.component2
+import kotlin.collections.distinct
+import kotlin.collections.iterator
+import kotlin.collections.set
 
 
 class DishMenuFragment() : Fragment(), LifecycleOwner {
@@ -40,7 +40,7 @@ class DishMenuFragment() : Fragment(), LifecycleOwner {
     ): View {
         binding = FragmentDishMenuBinding.inflate(inflater)
 
-        binding.materialToolbar.title = Repo.params[3]
+        binding.materialToolbar.title = arguments?.getString("title") ?: "Категория"
         binding.materialToolbar.isTitleCentered = true
         binding.materialToolbar.setNavigationOnClickListener {
             binding.root.findNavController().navigate(R.id.action_dishMenuFragment_pop_including_navigation_home)

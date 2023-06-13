@@ -8,8 +8,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.idzayu.foodcatalog.R
 import com.idzayu.foodcatalog.databinding.BasketItemBinding
-import com.idzayu.foodcatalog.databinding.CategoryItemBinding
-import com.idzayu.foodcatalog.repository.Category
 import com.idzayu.foodcatalog.repository.Dish
 import com.idzayu.foodcatalog.repository.Repo
 
